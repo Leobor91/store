@@ -64,21 +64,7 @@ Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo LICENSE
 
 Esta estructura y descripción proporcionan una visión clara y concisa del proyecto, facilitando su comprensión y uso.
 
-Descripción de la Estructura
-- application: Contiene la lógica de negocio de la aplicación.  
-    ClientService.java: Interfaz para los servicios relacionados con Client.
-- config: Contiene las clases de configuración de la aplicación.  
-    StoreApplication.java: Clase principal de la aplicación Spring Boot.
-- delivery: Maneja las solicitudes HTTP y devuelve respuestas HTTP.  
-    ClientControler.java: Controlador REST para manejar las solicitudes relacionadas con Client.
-- domain: Contiene las entidades del dominio de la aplicación.  
-    Client.java: Entidad que representa a un cliente.
-- repository: Maneja la interacción con la base de datos.  
-    ClientRepository.java: Repositorio JPA para realizar operaciones CRUD en Client.
-- resources: Contiene archivos de configuración y scripts SQL.
-    application.properties: Archivo de configuración de Spring Boot.
-    schema.sql: Script SQL para la creación de la base de datos.
-
+## Estructura del Proyecto
 
 src
 └── main
