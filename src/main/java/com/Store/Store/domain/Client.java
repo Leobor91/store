@@ -31,7 +31,7 @@ public class Client {
     @Column(name = "document_number", nullable = false)
     private String documentNumber;
 
-    @Column(name = "email_address", nullable = false)
+    @Column(name = "email", nullable = false)
     private String emailAddress;
 
     @Column(name = "phone", nullable = false)
