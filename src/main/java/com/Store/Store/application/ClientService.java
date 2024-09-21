@@ -1,7 +1,7 @@
 package com.Store.Store.application;
 
-import com.Store.Store.domain.Client;
-import com.Store.Store.domain.ResponseMessage;
+import com.Store.Store.domain.dto.Client;
+import com.Store.Store.domain.dto.ResponseMessage;
 
 import java.util.List;
 
@@ -11,5 +11,5 @@ public interface ClientService {
 
     ResponseMessage save(Client client);
 
-    Client findByDocumentTypeAndDocumentNumber(String documentType, String documentNumber);
+    ResponseMessage updateClient(Client client);
 }
