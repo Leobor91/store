@@ -10,7 +10,7 @@ import lombok.*;
 @Entity
 @Data
 @RequiredArgsConstructor
-@Table(name = "clients", schema = "store")
+@Table(name = "clients")
 @Builder(toBuilder = true)
 @AllArgsConstructor
 public class Client {
@@ -32,7 +32,7 @@ public class Client {
     private String documentNumber;
 
     @Column(name = "email", nullable = false)
-    private String emailAddress;
+    private String email;
 
     @Column(name = "phone", nullable = false)
     private String phone;
