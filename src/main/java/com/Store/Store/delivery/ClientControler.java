@@ -2,8 +2,8 @@ package com.Store.Store.delivery;
 
 
 import com.Store.Store.application.ClientService;
-import com.Store.Store.domain.Client;
-import com.Store.Store.domain.ResponseMessage;
+import com.Store.Store.domain.dto.Client;
+import com.Store.Store.domain.dto.ResponseMessage;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
@@ -29,4 +29,9 @@ public class ClientControler {
      public ResponseMessage save(@RequestBody Client client) {
          return clientService.save(client);
      }
+
+    @PutMapping("/update")
+    public ResponseMessage updateClient(@RequestBody Client client) {
+        return clientService.updateClient(client);
+    }
 }

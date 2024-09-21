@@ -1,7 +1,7 @@
 package com.Store.Store.repository;
 
 
-import com.Store.Store.domain.Client;
+import com.Store.Store.domain.dto.Client;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

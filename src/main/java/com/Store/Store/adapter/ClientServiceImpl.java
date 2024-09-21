@@ -1,11 +1,10 @@
 package com.Store.Store.adapter;
 
 import com.Store.Store.application.ClientService;
-import com.Store.Store.domain.Client;
-import com.Store.Store.domain.ResponseMessage;
+import com.Store.Store.domain.dto.Client;
+import com.Store.Store.domain.dto.ResponseMessage;
+import com.Store.Store.domain.enums.ClientEnum;
 import com.Store.Store.repository.ClientRepository;
-import lombok.Builder;
-import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -28,30 +27,38 @@ public class ClientServiceImpl implements ClientService {
     @Override
     public ResponseMessage save(Client client) {
         log.info("Guardando cliente: {}", client);
-        Client savedClient = null;
-        String message;
-        if (validateClient(client.getDocumentType(), client.getDocumentNumber())) {
-            message = "Cliente ya existe";
-            log.info(message);
-        } else {
-            message = "Cliente guardado exitosamente";
+        Client savedClient = clientRepository.findByDocumentTypeAndDocumentNumber(client.getDocumentType(), client.getDocumentNumber());
+        if (savedClient == null) {
             savedClient = clientRepository.save(client.toBuilder()
                     .id(client.getId() == null || client.getId().isEmpty() ? UUID.randomUUID().toString() : client.getId())
                     .createdDate(client.getCreatedDate() == null || client.getCreatedDate().isEmpty() ? String.valueOf(System.currentTimeMillis()) : client.getCreatedDate())
+                    .updatedDate(String.valueOf(System.currentTimeMillis()))
                     .build());
-            log.info(message + ": {}", savedClient);
+            log.info("{}: {}", ClientEnum.CLIENT_SAVED_SUCCESSFULLY.getValue(), savedClient);
+            return new ResponseMessage(ClientEnum.CLIENT_SAVED_SUCCESSFULLY.getValue(), savedClient);
+        } else {
+            log.info(ClientEnum.CLIENT_ALREADY_EXISTS.getValue());
+            return new ResponseMessage(ClientEnum.CLIENT_ALREADY_EXISTS.getValue(), null);
         }
-        return new ResponseMessage(message, savedClient);
     }
-
-
 
     @Override
-    public Client findByDocumentTypeAndDocumentNumber(String documentType, String documentNumber) {
-        return clientRepository.findByDocumentTypeAndDocumentNumber(documentType, documentNumber);
-    }
-
-    public boolean validateClient(String documentType, String documentNumber) {
-        return clientRepository.findByDocumentTypeAndDocumentNumber(documentType, documentNumber) != null;
+    public ResponseMessage updateClient(Client client) {
+        log.info("Actualizando cliente con tipo de documento: {} y numero de documento {} ", client.getDocumentType(), client.getDocumentNumber());
+        Client existingClient = clientRepository.findByDocumentTypeAndDocumentNumber(client.getDocumentType(), client.getDocumentNumber());
+        if (existingClient != null) {
+            log.info("Cliente encontrado: {}", existingClient);
+            client.toBuilder()
+                    .id(existingClient.getId())
+                    .createdDate(existingClient.getCreatedDate())
+                    .updatedDate(String.valueOf(System.currentTimeMillis()))
+                    .build();
+            existingClient = clientRepository.save(client);
+            log.info("{}: {}", ClientEnum.CLIENT_UPDATED_SUCCESSFULLY.getValue(), client);
+            return new ResponseMessage(ClientEnum.CLIENT_UPDATED_SUCCESSFULLY.getValue(), existingClient);
+        } else {
+            log.info(ClientEnum.CLIENT_NOT_FOUND.getValue());
+            return new ResponseMessage(ClientEnum.CLIENT_NOT_FOUND.getValue(), null);
+        }
     }
 }
