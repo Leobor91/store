@@ -12,4 +12,6 @@ public interface ClientService {
     ResponseMessage save(Client client);
 
     ResponseMessage updateClient(Client client);
+
+    ResponseMessage deleteClient(String documentType, String documentNumber);
 }

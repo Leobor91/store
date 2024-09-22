@@ -48,17 +48,34 @@ public class ClientServiceImpl implements ClientService {
         Client existingClient = clientRepository.findByDocumentTypeAndDocumentNumber(client.getDocumentType(), client.getDocumentNumber());
         if (existingClient != null) {
             log.info("Cliente encontrado: {}", existingClient);
-            client.toBuilder()
-                    .id(existingClient.getId())
-                    .createdDate(existingClient.getCreatedDate())
+            existingClient = existingClient.toBuilder()
+                    .name(client.getName())
+                    .lastName(client.getLastName())
+                    .email(client.getEmail())
+                    .phone(client.getPhone())
                     .updatedDate(String.valueOf(System.currentTimeMillis()))
                     .build();
-            existingClient = clientRepository.save(client);
-            log.info("{}: {}", ClientEnum.CLIENT_UPDATED_SUCCESSFULLY.getValue(), client);
+            existingClient = clientRepository.save(existingClient);
+            log.info("{}: {}", ClientEnum.CLIENT_UPDATED_SUCCESSFULLY.getValue(), existingClient);
             return new ResponseMessage(ClientEnum.CLIENT_UPDATED_SUCCESSFULLY.getValue(), existingClient);
         } else {
             log.info(ClientEnum.CLIENT_NOT_FOUND.getValue());
             return new ResponseMessage(ClientEnum.CLIENT_NOT_FOUND.getValue(), null);
         }
     }
+
+    @Override
+    public ResponseMessage deleteClient(String documentType, String documentNumber) {
+        log.info("Eliminando cliente con tipo de documento: {} y número de documento: {}", documentType, documentNumber);
+        Client existingClient = clientRepository.findByDocumentTypeAndDocumentNumber(documentType, documentNumber);
+        if (existingClient != null) {
+            clientRepository.delete(existingClient);
+            log.info(ClientEnum.CLIENT_DELETED_SUCCESSFULLY.getValue());
+            return new ResponseMessage(ClientEnum.CLIENT_DELETED_SUCCESSFULLY.getValue(), existingClient);
+        } else {
+            log.info(ClientEnum.CLIENT_NOT_FOUND.getValue());
+            return new ResponseMessage(ClientEnum.CLIENT_NOT_FOUND.getValue(), null);
+        }
+    }
 }
+
