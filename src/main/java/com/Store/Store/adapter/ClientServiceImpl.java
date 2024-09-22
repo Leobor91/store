@@ -48,13 +48,15 @@ public class ClientServiceImpl implements ClientService {
         Client existingClient = clientRepository.findByDocumentTypeAndDocumentNumber(client.getDocumentType(), client.getDocumentNumber());
         if (existingClient != null) {
             log.info("Cliente encontrado: {}", existingClient);
-            client.toBuilder()
-                    .id(existingClient.getId())
-                    .createdDate(existingClient.getCreatedDate())
+            existingClient = existingClient.toBuilder()
+                    .name(client.getName())
+                    .lastName(client.getLastName())
+                    .email(client.getEmail())
+                    .phone(client.getPhone())
                     .updatedDate(String.valueOf(System.currentTimeMillis()))
                     .build();
-            existingClient = clientRepository.save(client);
-            log.info("{}: {}", ClientEnum.CLIENT_UPDATED_SUCCESSFULLY.getValue(), client);
+            existingClient = clientRepository.save(existingClient);
+            log.info("{}: {}", ClientEnum.CLIENT_UPDATED_SUCCESSFULLY.getValue(), existingClient);
             return new ResponseMessage(ClientEnum.CLIENT_UPDATED_SUCCESSFULLY.getValue(), existingClient);
         } else {
             log.info(ClientEnum.CLIENT_NOT_FOUND.getValue());

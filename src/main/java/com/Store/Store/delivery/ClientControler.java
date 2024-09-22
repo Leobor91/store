@@ -35,7 +35,7 @@ public class ClientControler {
         return clientService.updateClient(client);
     }
 
-    @DeleteMapping("/delete/{documentType}/{documentNumber}")
+    @DeleteMapping("/delete/documentType/{documentType}/documentNumber/{documentNumber}")
     public ResponseMessage deleteClient(@PathVariable String documentType, @PathVariable String documentNumber) {
         return clientService.deleteClient(documentType, documentNumber);
     }
