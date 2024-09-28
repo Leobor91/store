@@ -7,6 +7,7 @@ import com.Store.Store.domain.dto.ResponseMessage;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
+import reactor.core.publisher.Flux;
 
 import java.util.List;
 
@@ -21,7 +22,7 @@ public class ClientControler {
     private final ClientService clientService;
 
      @GetMapping("/list")
-    public List<Client> findAll() {
+    public Flux<Client> findAll() {
          return clientService.findAll();
      }
 
