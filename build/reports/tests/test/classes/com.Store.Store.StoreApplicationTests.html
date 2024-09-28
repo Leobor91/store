@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.905s</div>
+<div class="counter">0.651s</div>
 <p>duration</p>
 </div>
 </td>
@@ -79,7 +79,7 @@
 </thead>
 <tr>
 <td class="success">contextLoads()</td>
-<td class="success">0.905s</td>
+<td class="success">0.651s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -87,8 +87,8 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>22:27:59.537 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.Store.Store.StoreApplicationTests]: StoreApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-22:27:59.880 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.Store.Store.StoreApplication for test class com.Store.Store.StoreApplicationTests
+<pre>16:24:57.822 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.Store.Store.StoreApplicationTests]: StoreApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+16:24:57.935 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.Store.Store.StoreApplication for test class com.Store.Store.StoreApplicationTests
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -99,28 +99,28 @@
 
  :: Spring Boot ::                (v3.3.4)
 
-2024-09-22T22:28:01.193-05:00  INFO 16716 --- [Store] [    Test worker] com.Store.Store.StoreApplicationTests    : Starting StoreApplicationTests using Java 17.0.11 with PID 16716 (started by leonel.borja in D:\Leobor\Store\Store)
-2024-09-22T22:28:01.199-05:00  INFO 16716 --- [Store] [    Test worker] com.Store.Store.StoreApplicationTests    : No active profile set, falling back to 1 default profile: &quot;default&quot;
-2024-09-22T22:28:03.403-05:00  INFO 16716 --- [Store] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-09-22T22:28:03.843-05:00  INFO 16716 --- [Store] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 419 ms. Found 1 JPA repository interface.
-2024-09-22T22:28:04.966-05:00  INFO 16716 --- [Store] [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-09-22T22:28:05.149-05:00  INFO 16716 --- [Store] [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
-2024-09-22T22:28:05.240-05:00  INFO 16716 --- [Store] [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-09-22T22:28:06.004-05:00  INFO 16716 --- [Store] [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-09-22T22:28:06.067-05:00  INFO 16716 --- [Store] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-09-22T22:28:07.444-05:00  INFO 16716 --- [Store] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@12608986
-2024-09-22T22:28:07.446-05:00  INFO 16716 --- [Store] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-09-22T22:28:07.570-05:00  WARN 16716 --- [Store] [    Test worker] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-09-22T22:28:09.276-05:00  INFO 16716 --- [Store] [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-09-22T22:28:10.330-05:00  INFO 16716 --- [Store] [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-09-22T22:28:11.491-05:00  WARN 16716 --- [Store] [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-09-22T22:28:12.378-05:00  INFO 16716 --- [Store] [    Test worker] com.Store.Store.StoreApplicationTests    : Started StoreApplicationTests in 12.101 seconds (process running for 18.492)
-2024-09-22T22:28:12.386-05:00  INFO 16716 --- [Store] [    Test worker] com.Store.Store.StoreApplication         : ========================== Memory Info ==========================
-2024-09-22T22:28:12.387-05:00  INFO 16716 --- [Store] [    Test worker] com.Store.Store.StoreApplication         : Free memory: 14 MB
-2024-09-22T22:28:12.388-05:00  INFO 16716 --- [Store] [    Test worker] com.Store.Store.StoreApplication         : Allocated memory: 54 MB
-2024-09-22T22:28:12.388-05:00  INFO 16716 --- [Store] [    Test worker] com.Store.Store.StoreApplication         : Max memory: 512 MB
-2024-09-22T22:28:12.389-05:00  INFO 16716 --- [Store] [    Test worker] com.Store.Store.StoreApplication         : Total free memory: 472 MB
-2024-09-22T22:28:12.389-05:00  INFO 16716 --- [Store] [    Test worker] com.Store.Store.StoreApplication         : =================================================================
+2024-09-28T16:24:58.364-05:00  INFO 24096 --- [Store] [    Test worker] com.Store.Store.StoreApplicationTests    : Starting StoreApplicationTests using Java 17.0.11 with PID 24096 (started by leonel.borja in D:\Leobor\Store\Store)
+2024-09-28T16:24:58.366-05:00  INFO 24096 --- [Store] [    Test worker] com.Store.Store.StoreApplicationTests    : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2024-09-28T16:24:59.120-05:00  INFO 24096 --- [Store] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-09-28T16:24:59.259-05:00  INFO 24096 --- [Store] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 127 ms. Found 2 JPA repository interfaces.
+2024-09-28T16:24:59.842-05:00  INFO 24096 --- [Store] [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-09-28T16:24:59.922-05:00  INFO 24096 --- [Store] [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-09-28T16:24:59.971-05:00  INFO 24096 --- [Store] [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-09-28T16:25:00.340-05:00  INFO 24096 --- [Store] [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-09-28T16:25:00.366-05:00  INFO 24096 --- [Store] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-09-28T16:25:00.719-05:00  INFO 24096 --- [Store] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@413eaf5d
+2024-09-28T16:25:00.721-05:00  INFO 24096 --- [Store] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-09-28T16:25:00.773-05:00  WARN 24096 --- [Store] [    Test worker] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-09-28T16:25:01.589-05:00  INFO 24096 --- [Store] [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-09-28T16:25:01.646-05:00  INFO 24096 --- [Store] [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-09-28T16:25:02.406-05:00  WARN 24096 --- [Store] [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-09-28T16:25:02.970-05:00  INFO 24096 --- [Store] [    Test worker] com.Store.Store.StoreApplicationTests    : Started StoreApplicationTests in 4.817 seconds (process running for 6.209)
+2024-09-28T16:25:02.977-05:00  INFO 24096 --- [Store] [    Test worker] com.Store.Store.StoreApplication         : ========================== Memory Info ==========================
+2024-09-28T16:25:02.977-05:00  INFO 24096 --- [Store] [    Test worker] com.Store.Store.StoreApplication         : Free memory: 33 MB
+2024-09-28T16:25:02.978-05:00  INFO 24096 --- [Store] [    Test worker] com.Store.Store.StoreApplication         : Allocated memory: 87 MB
+2024-09-28T16:25:02.978-05:00  INFO 24096 --- [Store] [    Test worker] com.Store.Store.StoreApplication         : Max memory: 512 MB
+2024-09-28T16:25:02.978-05:00  INFO 24096 --- [Store] [    Test worker] com.Store.Store.StoreApplication         : Total free memory: 458 MB
+2024-09-28T16:25:02.978-05:00  INFO 24096 --- [Store] [    Test worker] com.Store.Store.StoreApplication         : =================================================================
 </pre>
 </span>
 </div>
@@ -132,7 +132,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 8.10.1</a> at 22/09/2024, 10:28:13 p. m.</p>
+<a href="http://www.gradle.org">Gradle 8.10.1</a> at 28/09/2024, 4:25:03 p. m.</p>
 </div>
 </div>
 </body>
