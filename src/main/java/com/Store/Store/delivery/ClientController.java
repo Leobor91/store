@@ -11,7 +11,7 @@ import reactor.core.publisher.Flux;
 
 import java.util.List;
 
-@CrossOrigin(origins = {"http://localhost:3000", "https://lstoreapp.netlify.app"})
+@CrossOrigin(origins = {"http://localhost:3000", "https://lstoreapp.netlify.app", "https://store-customer-app-react.netlify.app","http://localhost:3001"})
 @Service
 @RestController
 @RequestMapping("/api/clients")
