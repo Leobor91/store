@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 
-@CrossOrigin(origins = {"http://localhost:3000", "https://lstoreapp.netlify.app"})
+@CrossOrigin(origins = {"http://localhost:3000", "https://lstoreapp.netlify.app", "https://store-customer-app-react.netlify.app","http://localhost:3001"})
 @Service
 @RestController
 @RequestMapping("/api/products")

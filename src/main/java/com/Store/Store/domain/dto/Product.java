@@ -22,7 +22,7 @@ public class Product {
     private String description;
 
     @Column(name = "status")
-    private byte status;
+    private int status;
 
     @Column(name = "stock")
     private long stock;
