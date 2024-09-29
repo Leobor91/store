@@ -13,7 +13,7 @@ import reactor.core.publisher.Flux;
 @RestController
 @RequestMapping("/api/vendors")
 @RequiredArgsConstructor
-public class VendorControler {
+public class VendorController {
 
     private final VendorService vendorService;
 
